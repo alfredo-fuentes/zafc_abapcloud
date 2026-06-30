@@ -4,8 +4,10 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Vista artículos arte'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define view zafc_cds_art as select from zafc_tab_art
 {
+    key client as client,
     key id_art as IdArt,
     desc1 as Desc1,
     desc2 as Desc2,

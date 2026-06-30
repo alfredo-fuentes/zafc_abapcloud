@@ -1,0 +1,58 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'Artículo Arte AMFC',
+    typeNamePlural: 'Artículos Arte AMFC',
+    typeImageUrl: '',
+    imageUrl: 'Url',
+    title: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: '',
+        valueQualifier: '',
+        targetElement: '',
+        url: '' 
+    },
+    description: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: '',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    }
+}
+annotate entity zafc_cds_art
+    with 
+{
+    @UI.facet: [{ id:'DetArt', label: 'Detalle artículo', type: #COLLECTION, position: 10 },
+    { id: 'Art', parentId: 'DetArt', label: 'Detalles', type: #FIELDGROUP_REFERENCE,
+     targetQualifier: 'DetArt', position: 10 }
+     ]
+     
+//     @UI.hidden: true
+//     client;
+     @UI.lineItem: [{ position: 10, importance: #HIGH }]
+     IdArt;
+     @UI.lineItem: [{ position: 20, importance: #HIGH }]     
+     Desc1;
+     @UI.lineItem: [{ position: 30, importance: #HIGH }]    
+     Stock;
+     @UI.lineItem: [{ position: 40, importance: #HIGH, criticality: 'status' }]    
+     status; 
+     
+     @UI.fieldGroup: [{ qualifier: 'DetArt', position: 10  }]
+     Desc2;
+     @UI.fieldGroup: [{ qualifier: 'DetArt', position: 20  }]     
+     Color;
+     @UI.fieldGroup: [{ qualifier: 'DetArt', position: 30  }]     
+     Piezas;
+       
+    
+}

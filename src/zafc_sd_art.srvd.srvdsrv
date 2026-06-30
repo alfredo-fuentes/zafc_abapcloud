@@ -1,0 +1,4 @@
+@EndUserText.label: 'Esponer CDS'
+define service Zafc_sd_art {
+  expose zafc_cds_art;
+}
